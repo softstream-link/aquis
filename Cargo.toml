@@ -1,0 +1,41 @@
+[workspace]
+members = ["model"] #, "connect/core", "connect/nonblocking"]
+
+resolver = "2"
+
+[workspace.package]
+version = "4.1.0"                                       # NOTE remembe to update this and sbelow dependencies for byteserde and byteserde_derive
+authors = ["Sykiro <sykiro.rdr@gmail.com>"]
+readme = "readme.md"
+license-file = "LICENSE"
+edition = "2021"
+rust-version = "1.69"
+repository = "https://github.com/softstream-link/aquis"
+keywords = ["exchange", "protocol"]
+categories = ["API bindings"]
+
+
+[workspace.dependencies]
+# byteserde = { version = "0.4.0" }
+# byteserde_derive = { version = "0.4.0" }
+# byteserde_types = { version = "0.4.0" }
+byteserde = { version = "0.4.0", path = "../byteserde/byteserde" }
+byteserde_derive = { version = "0.4.0", path = "../byteserde/byteserde_derive" }
+byteserde_types = { version = "0.4.0", path = "../byteserde/byteserde_types" }
+derive_more = "0.99"                                                             # try_into, etc
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+
+links_core = { path = "../links/core" }
+
+
+bytes = { version = "1.5" }
+
+# logging
+log = { version = "0.4" }
+env_logger = { version = "0.10" }
+colored = { version = "2.0" }
+
+# benches
+criterion = { version = "0.5" }
