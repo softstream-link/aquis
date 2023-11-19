@@ -1,6 +1,6 @@
+use crate::prelude::{Header, PacketTypeOrderCancelMessage};
 use byteserde_derive::{ByteDeserializeSlice, ByteSerializeStack, ByteSerializedLenOf};
 
-use crate::prelude::{Header, PacketTypeOrderCancelMessage};
 pub const ORDER_CANCEL_MESSAGE_PACKET_LEN: u16 = 34;
 
 #[derive(ByteSerializeStack, ByteDeserializeSlice, ByteSerializedLenOf, PartialEq, Debug, Clone)]

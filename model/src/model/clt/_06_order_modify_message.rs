@@ -1,5 +1,6 @@
 use crate::prelude::{Header, PacketTypeOrderModifyMessage};
 use byteserde_derive::{ByteDeserializeSlice, ByteSerializeStack, ByteSerializedLenOf};
+
 pub const ORDER_MESSAGE_PACKET_LENGTH: u16 = 47;
 
 #[derive(ByteSerializeStack, ByteDeserializeSlice, ByteSerializedLenOf, PartialEq, Debug, Clone)]
@@ -39,7 +40,7 @@ impl Default for OrderModifyMessage {
 #[cfg(test)]
 mod test {
     use super::*;
-    use crate::model::_06_order_modify_message::ORDER_MESSAGE_PACKET_LENGTH;
+    use crate::model::clt::_06_order_modify_message::ORDER_MESSAGE_PACKET_LENGTH;
     use byteserde::prelude::*;
     use links_core::unittest::setup;
     use log::info;

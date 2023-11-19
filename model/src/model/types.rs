@@ -13,19 +13,24 @@ use byteserde_derive::{ByteDeserializeSlice, ByteSerializeStack, ByteSerializedL
 pub mod packet_types {
     use super::*;
     use byteserde_types::const_u8_tuple;
-    // clt
-    const_u8_tuple!(PacketTypeLoginRequest, 1, derive(ByteSerializeStack, ByteDeserializeSlice, ByteSerializedSizeOf, ByteSerializedLenOf, Debug, PartialEq, Clone, Copy));
-    const_u8_tuple!(PacketTypeLoginResponse, 2, derive(ByteSerializeStack, ByteDeserializeSlice, ByteSerializedSizeOf, ByteSerializedLenOf, Debug, PartialEq, Clone, Copy));
-    const_u8_tuple!(PacketTypeLogoutRequest, 3, derive(ByteSerializeStack, ByteDeserializeSlice, ByteSerializedSizeOf, ByteSerializedLenOf, Debug, PartialEq, Clone, Copy));
-    const_u8_tuple!(PacketTypeLogoutResponse, 4, derive(ByteSerializeStack, ByteDeserializeSlice, ByteSerializedSizeOf, ByteSerializedLenOf, Debug, PartialEq, Clone, Copy));
-    const_u8_tuple!(PacketTypeOrderAdd, 5, derive(ByteSerializeStack, ByteDeserializeSlice, ByteSerializedSizeOf, ByteSerializedLenOf, Debug, PartialEq, Clone, Copy));
-    const_u8_tuple!(PacketTypeOrderAddExtend, 21, derive(ByteSerializeStack, ByteDeserializeSlice, ByteSerializedSizeOf, ByteSerializedLenOf, Debug, PartialEq, Clone, Copy));
-    const_u8_tuple!(PacketTypeOrderCancelMessage, 7, derive(ByteSerializeStack, ByteDeserializeSlice, ByteSerializedSizeOf, ByteSerializedLenOf, Debug, PartialEq, Clone, Copy));
-
-    // svc
 
     // unidirectional
     const_u8_tuple!(PacketTypeHeartbeat, 0, derive(ByteSerializeStack, ByteDeserializeSlice, ByteSerializedSizeOf, ByteSerializedLenOf, Debug, PartialEq, Clone, Copy));
+
+    // clt
+    const_u8_tuple!(PacketTypeLoginRequest, 1, derive(ByteSerializeStack, ByteDeserializeSlice, ByteSerializedSizeOf, ByteSerializedLenOf, Debug, PartialEq, Clone, Copy));
+    const_u8_tuple!(PacketTypeLogoutRequest, 3, derive(ByteSerializeStack, ByteDeserializeSlice, ByteSerializedSizeOf, ByteSerializedLenOf, Debug, PartialEq, Clone, Copy));
+    const_u8_tuple!(PacketTypeOrderAdd, 5, derive(ByteSerializeStack, ByteDeserializeSlice, ByteSerializedSizeOf, ByteSerializedLenOf, Debug, PartialEq, Clone, Copy));
+    const_u8_tuple!(PacketTypeOrderAddExtend, 21, derive(ByteSerializeStack, ByteDeserializeSlice, ByteSerializedSizeOf, ByteSerializedLenOf, Debug, PartialEq, Clone, Copy));
+    const_u8_tuple!(PacketTypeOrderCancelMessage, 7, derive(ByteSerializeStack, ByteDeserializeSlice, ByteSerializedSizeOf, ByteSerializedLenOf, Debug, PartialEq, Clone, Copy));
+    const_u8_tuple!(PacketTypeOrderModifyMessage, 9, derive(ByteSerializeStack, ByteDeserializeSlice, ByteSerializedSizeOf, ByteSerializedLenOf, Debug, PartialEq, Clone, Copy));
+    
+    // svc
+    const_u8_tuple!(PacketTypeLoginResponse, 2, derive(ByteSerializeStack, ByteDeserializeSlice, ByteSerializedSizeOf, ByteSerializedLenOf, Debug, PartialEq, Clone, Copy));
+    const_u8_tuple!(PacketTypeLogoutResponse, 4, derive(ByteSerializeStack, ByteDeserializeSlice, ByteSerializedSizeOf, ByteSerializedLenOf, Debug, PartialEq, Clone, Copy));
+
+
+
 }
 
 pub mod sequence_number {
