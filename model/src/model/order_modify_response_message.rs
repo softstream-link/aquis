@@ -1,19 +1,17 @@
 use byteserde_derive::{ByteDeserializeSlice, ByteSerializeStack, ByteSerializedLenOf};
 pub const ORDER_MODIFY_RESPONSE_MESSAGE: u16 = 33;
-#[derive(
-    ByteSerializeStack, ByteDeserializeSlice, ByteSerializedLenOf, PartialEq, Debug, Clone,
-)]
+#[derive(ByteSerializeStack, ByteDeserializeSlice, ByteSerializedLenOf, PartialEq, Debug, Clone)]
 #[byteserde(endian = "le")]
 pub struct OrderModifyResponseMessage {
     msg_length: u16,
     msg_type: u8,
     msg_sequence_num: u32,
-    order_ref:u32,
-    request_ref:u32,
-    status:u8,
-    time_stamp:u64,
-    user_tag:u64,
-    flags:u8,
+    order_ref: u32,
+    request_ref: u32,
+    status: u8,
+    time_stamp: u64,
+    user_tag: u64,
+    flags: u8,
 }
 impl Default for OrderModifyResponseMessage {
     fn default() -> Self {
@@ -21,12 +19,12 @@ impl Default for OrderModifyResponseMessage {
             msg_length: 2,
             msg_type: 1,
             msg_sequence_num: 4,
-            order_ref:4,
-            request_ref:4,
-            status:1,
-            time_stamp:4,
-            user_tag:8,
-            flags:1, 
+            order_ref: 4,
+            request_ref: 4,
+            status: 1,
+            time_stamp: 4,
+            user_tag: 8,
+            flags: 1,
         }
     }
 }

@@ -28,25 +28,22 @@ pub mod packet_types {
     const_u8_tuple!(PacketTypeHeartbeat, 0, derive(ByteSerializeStack, ByteDeserializeSlice, ByteSerializedSizeOf, ByteSerializedLenOf, Debug, PartialEq, Clone, Copy));
 }
 
-
-pub mod sequence_number{
+pub mod sequence_number {
     use super::*;
     u32_tuple!(SequenceNumber, "le", derive(ByteSerializeStack, ByteDeserializeSlice, ByteSerializedSizeOf, ByteSerializedLenOf, Debug, PartialEq, Clone, Copy, Default));
 }
 
-pub mod sender_id{
+pub mod sender_id {
     use super::*;
     string_ascii_fixed!(SenderID, 16, b' ', true, derive(ByteSerializeStack, ByteDeserializeSlice, ByteSerializedSizeOf, ByteSerializedLenOf, PartialEq, Clone, Copy));
 }
 
-
-pub mod password{
+pub mod password {
     use super::*;
     string_ascii_fixed!(Password, 16, b' ', true, derive(ByteSerializeStack, ByteDeserializeSlice, ByteSerializedSizeOf, ByteSerializedLenOf, PartialEq, Clone, Copy));
 }
 
-
-pub mod reason_text{
+pub mod reason_text {
     use super::*;
     string_ascii_fixed!(ReasonText, 32, b' ', true, derive(ByteSerializeStack, ByteDeserializeSlice, ByteSerializedSizeOf, ByteSerializedLenOf, PartialEq, Clone, Copy));
 }

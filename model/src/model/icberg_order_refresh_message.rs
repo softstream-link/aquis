@@ -1,17 +1,15 @@
 use byteserde_derive::{ByteDeserializeSlice, ByteSerializeStack, ByteSerializedLenOf};
 pub const ICEBERG_ORDER_REFRESH_MESSAGE: u16 = 23;
-#[derive(
-    ByteSerializeStack, ByteDeserializeSlice, ByteSerializedLenOf, PartialEq, Debug, Clone,
-)]
+#[derive(ByteSerializeStack, ByteDeserializeSlice, ByteSerializedLenOf, PartialEq, Debug, Clone)]
 #[byteserde(endian = "le")]
 pub struct IcebergOrderRefreshMessage {
     msg_length: u16,
     msg_type: u8,
     msg_sequence_num: u32,
-    order_ref:u32,
-    orig_aqx_ordld:u32,
-    new_aqx_ordld:u32,
-    quantity:u32,
+    order_ref: u32,
+    orig_aqx_ordld: u32,
+    new_aqx_ordld: u32,
+    quantity: u32,
 }
 impl Default for IcebergOrderRefreshMessage {
     fn default() -> Self {
@@ -19,11 +17,10 @@ impl Default for IcebergOrderRefreshMessage {
             msg_length: 2,
             msg_type: 1,
             msg_sequence_num: 4,
-            order_ref:4,
-            orig_aqx_ordld:4,
-            new_aqx_ordld:4,
-            quantity:4,
-            
+            order_ref: 4,
+            orig_aqx_ordld: 4,
+            new_aqx_ordld: 4,
+            quantity: 4,
         }
     }
 }

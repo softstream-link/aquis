@@ -1,28 +1,26 @@
 use byteserde_derive::{ByteDeserializeSlice, ByteSerializeStack, ByteSerializedLenOf};
 pub const ORDER_CANCEL_RESPONSE_MESSAGE: u16 = 28;
-#[derive(
-    ByteSerializeStack, ByteDeserializeSlice, ByteSerializedLenOf, PartialEq, Debug, Clone,
-)]
+#[derive(ByteSerializeStack, ByteDeserializeSlice, ByteSerializedLenOf, PartialEq, Debug, Clone)]
 #[byteserde(endian = "le")]
 pub struct OrderCancelResponseMessage {
     msg_length: u16,
     msg_type: u8,
     msg_sequence_num: u32,
-    request_ref:u32,
-    status:u8,
-    time_stamp:u64,
-    user_tag:u64,
+    request_ref: u32,
+    status: u8,
+    time_stamp: u64,
+    user_tag: u64,
 }
 impl Default for OrderCancelResponseMessage {
     fn default() -> Self {
         OrderCancelResponseMessage {
-            msg_length:2,
-            msg_type:1,
-            msg_sequence_num:4,
-            request_ref:4,
-            status:1,
-            time_stamp:8,
-            user_tag:8,  
+            msg_length: 2,
+            msg_type: 1,
+            msg_sequence_num: 4,
+            request_ref: 4,
+            status: 1,
+            time_stamp: 8,
+            user_tag: 8,
         }
     }
 }

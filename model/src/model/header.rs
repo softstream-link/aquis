@@ -2,12 +2,11 @@ use byteserde::prelude::*;
 use byteserde_derive::{ByteDeserializeSlice, ByteSerializeStack, ByteSerializedLenOf};
 
 use super::types::SequenceNumber;
-#[derive(
-    ByteSerializeStack, ByteDeserializeSlice, ByteSerializedLenOf, PartialEq, Debug, Clone,
-)]
+#[derive(ByteSerializeStack, ByteDeserializeSlice, ByteSerializedLenOf, PartialEq, Debug, Clone)]
 #[byteserde(endian = "le")]
 pub struct Header<T, const L: u16>
-where T: ByteSerializeStack+ByteDeserializeSlice<T>+ByteSerializedLenOf+PartialEq+std::fmt::Debug+Clone+Default
+where
+    T: ByteSerializeStack + ByteDeserializeSlice<T> + ByteSerializedLenOf + PartialEq + std::fmt::Debug + Clone + Default,
 {
     pub(crate) msg_length: u16,
     pub(crate) msg_type: T,
@@ -15,7 +14,8 @@ where T: ByteSerializeStack+ByteDeserializeSlice<T>+ByteSerializedLenOf+PartialE
 }
 
 impl<T, const L: u16> Default for Header<T, L>
-where T: ByteSerializeStack+ByteDeserializeSlice<T>+ByteSerializedLenOf+PartialEq+std::fmt::Debug+Clone+Default
+where
+    T: ByteSerializeStack + ByteDeserializeSlice<T> + ByteSerializedLenOf + PartialEq + std::fmt::Debug + Clone + Default,
 {
     fn default() -> Self {
         Self {

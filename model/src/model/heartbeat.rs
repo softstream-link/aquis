@@ -3,9 +3,7 @@ use byteserde_derive::{ByteDeserializeSlice, ByteSerializeStack, ByteSerializedL
 use crate::prelude::*;
 
 pub const HEARTBEAT_MSG_LEN: u16 = 7;
-#[derive(
-    ByteSerializeStack, ByteDeserializeSlice, ByteSerializedLenOf, PartialEq, Debug, Clone, Default,
-)]
+#[derive(ByteSerializeStack, ByteDeserializeSlice, ByteSerializedLenOf, PartialEq, Debug, Clone, Default)]
 #[byteserde(endian = "le")]
 pub struct Heartbeat {
     header: Header<PacketTypeHeartbeat, HEARTBEAT_MSG_LEN>,

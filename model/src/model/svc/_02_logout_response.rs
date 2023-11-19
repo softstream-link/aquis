@@ -2,9 +2,7 @@ use crate::prelude::*;
 use byteserde_derive::{ByteDeserializeSlice, ByteSerializeStack, ByteSerializedLenOf};
 pub const LOGOUT_RESPONSE_MSG_LEN: u16 = 40;
 
-#[derive(
-    ByteSerializeStack, ByteDeserializeSlice, ByteSerializedLenOf, PartialEq, Debug, Clone,
-)]
+#[derive(ByteSerializeStack, ByteDeserializeSlice, ByteSerializedLenOf, PartialEq, Debug, Clone)]
 #[byteserde(endian = "le")]
 pub struct LogoutResponse {
     header: Header<PacketTypeLogoutResponse, LOGOUT_RESPONSE_MSG_LEN>,

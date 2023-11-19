@@ -2,9 +2,7 @@ use crate::prelude::*;
 use byteserde_derive::{ByteDeserializeSlice, ByteSerializeStack, ByteSerializedLenOf};
 pub const LOGIN_REQUEST_MSG_LEN: u16 = 47;
 
-#[derive(
-    ByteSerializeStack, ByteDeserializeSlice, ByteSerializedLenOf, PartialEq, Debug, Clone,
-)]
+#[derive(ByteSerializeStack, ByteDeserializeSlice, ByteSerializedLenOf, PartialEq, Debug, Clone)]
 #[byteserde(endian = "le")]
 pub struct LoginRequest {
     header: Header<PacketTypeLoginRequest, LOGIN_REQUEST_MSG_LEN>,
@@ -28,7 +26,7 @@ impl Default for LoginRequest {
 }
 #[cfg(test)]
 mod test {
-    use crate::{prelude::*, model::clt::_01_login_request::LOGIN_REQUEST_MSG_LEN};
+    use crate::{model::clt::_01_login_request::LOGIN_REQUEST_MSG_LEN, prelude::*};
     use byteserde::prelude::*;
     use links_core::unittest::setup;
     use log::info;

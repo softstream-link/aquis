@@ -1,17 +1,15 @@
 use byteserde_derive::{ByteDeserializeSlice, ByteSerializeStack, ByteSerializedLenOf};
 pub const TRADE_CAPTURE_RESPONSE_MESSAGE: u16 = 24;
-#[derive(
-    ByteSerializeStack, ByteDeserializeSlice, ByteSerializedLenOf, PartialEq, Debug, Clone,
-)]
+#[derive(ByteSerializeStack, ByteDeserializeSlice, ByteSerializedLenOf, PartialEq, Debug, Clone)]
 #[byteserde(endian = "le")]
 pub struct TradeCaptureResponseMessage {
     msg_length: u16,
     msg_type: u8,
-    msg_sequence_num:u32,
-    status:u8,
-    trade_ref:u32,
-    request_ref:u32,
-    user_tag:u64,
+    msg_sequence_num: u32,
+    status: u8,
+    trade_ref: u32,
+    request_ref: u32,
+    user_tag: u64,
 }
 impl Default for TradeCaptureResponseMessage {
     fn default() -> Self {
@@ -19,10 +17,10 @@ impl Default for TradeCaptureResponseMessage {
             msg_length: 2,
             msg_type: 1,
             msg_sequence_num: 4,
-            status:1,
-            trade_ref:4,
-            request_ref:4,
-            user_tag:8,
+            status: 1,
+            trade_ref: 4,
+            request_ref: 4,
+            user_tag: 8,
         }
     }
 }
