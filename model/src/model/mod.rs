@@ -8,6 +8,6 @@ pub mod types;
 pub mod order_modify_extended_message;
 pub mod order_modify_message;
 pub mod trade_bust_message;
-pub mod trade_capture_message;
+
 pub mod trade_capture_response_message;
 pub mod trade_message;
