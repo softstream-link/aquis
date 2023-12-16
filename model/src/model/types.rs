@@ -28,7 +28,7 @@ pub mod packet_types {
     // svc
     const_u8_tuple!(PacketTypeLoginResponse, 2, derive(ByteSerializeStack, ByteDeserializeSlice, ByteSerializedSizeOf, ByteSerializedLenOf, Debug, PartialEq, Clone, Copy));
     const_u8_tuple!(PacketTypeLogoutResponse, 4, derive(ByteSerializeStack, ByteDeserializeSlice, ByteSerializedSizeOf, ByteSerializedLenOf, Debug, PartialEq, Clone, Copy));
-
+    const_u8_tuple!{PacketTypeIcebergOrderRefreshMessage, 23, derive(ByteSerializeStack, ByteDeserializeSlice, ByteSerializedSizeOf, ByteSerializedLenOf, Debug, PartialEq, Clone, Copy)}
 
 
 }
