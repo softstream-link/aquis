@@ -8,6 +8,9 @@ pub use crate::model::svc::_07_order_add_response_message;
 pub use crate::model::svc::_08_order_cancel_response_message;
 pub use crate::model::svc::_09_order_modify_response_message;
 pub use crate::model::svc::_10_iceberg_order_refresh_message;
+pub use crate::model::svc::_11_trade_capture_message;
+pub use crate::model::svc::_12_trade_capture_response_message;
+
 
 pub use crate::model::header::Header;
 pub use crate::model::heartbeat::Heartbeat;

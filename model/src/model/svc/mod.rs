@@ -5,3 +5,4 @@ pub mod _08_order_cancel_response_message;
 pub mod _09_order_modify_response_message;
 pub mod _10_iceberg_order_refresh_message;
 pub mod _11_trade_capture_message;
+pub mod _12_trade_capture_response_message;

@@ -1,11 +1,11 @@
+use crate::prelude::{Header,PacketTypeTradeCaptureResponseMessage};
 use byteserde_derive::{ByteDeserializeSlice, ByteSerializeStack, ByteSerializedLenOf};
+
 pub const TRADE_CAPTURE_RESPONSE_MESSAGE: u16 = 24;
 #[derive(ByteSerializeStack, ByteDeserializeSlice, ByteSerializedLenOf, PartialEq, Debug, Clone)]
 #[byteserde(endian = "le")]
 pub struct TradeCaptureResponseMessage {
-    msg_length: u16,
-    msg_type: u8,
-    msg_sequence_num: u32,
+    header: Header<PacketTypeTradeCaptureResponseMessage,TRADE_CAPTURE_RESPONSE_MESSAGE>,
     status: u8,
     trade_ref: u32,
     request_ref: u32,
@@ -14,9 +14,7 @@ pub struct TradeCaptureResponseMessage {
 impl Default for TradeCaptureResponseMessage {
     fn default() -> Self {
         TradeCaptureResponseMessage {
-            msg_length: 2,
-            msg_type: 1,
-            msg_sequence_num: 4,
+            header: Header::default(),
             status: 1,
             trade_ref: 4,
             request_ref: 4,
