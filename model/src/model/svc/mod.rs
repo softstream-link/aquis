@@ -1,8 +1,10 @@
 pub mod _01_login_response;
 pub mod _02_logout_response;
-pub mod _07_order_add_response_message;
-pub mod _08_order_cancel_response_message;
-pub mod _09_order_modify_response_message;
-pub mod _10_iceberg_order_refresh_message;
-pub mod _11_trade_capture_message;
-pub mod _12_trade_capture_response_message;
+pub mod _03_order_add_response_message;
+pub mod _04_order_cancel_response_message;
+pub mod _05_order_modify_response_message;
+pub mod _06_iceberg_order_refresh_message;
+pub mod _07_trade_capture_message;
+pub mod _08_trade_capture_response_message;
+pub mod _09_trade_message;
+pub mod _10_trade_bust_message;

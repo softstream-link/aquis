@@ -31,6 +31,8 @@ pub mod packet_types {
     const_u8_tuple!{PacketTypeIcebergOrderRefreshMessage, 23, derive(ByteSerializeStack, ByteDeserializeSlice, ByteSerializedSizeOf, ByteSerializedLenOf, Debug, PartialEq, Clone, Copy)}
     const_u8_tuple!{PacketTypeTradeCaptureMessage, 34, derive(ByteSerializeStack, ByteDeserializeSlice, ByteSerializedSizeOf, ByteSerializedLenOf, Debug, PartialEq, Clone, Copy)}
     const_u8_tuple!{PacketTypeTradeCaptureResponseMessage, 24, derive(ByteSerializeStack, ByteDeserializeSlice, ByteSerializedSizeOf, ByteSerializedLenOf, Debug, PartialEq, Clone, Copy)}
+    const_u8_tuple!{PacketTypeTradeMessage, 24, derive(ByteSerializeStack, ByteDeserializeSlice, ByteSerializedSizeOf, ByteSerializedLenOf, Debug, PartialEq, Clone, Copy)}
+    const_u8_tuple!{PacketTypeTradeBustMessage, 36, derive(ByteSerializeStack, ByteDeserializeSlice, ByteSerializedSizeOf, ByteSerializedLenOf, Debug, PartialEq, Clone, Copy)}
 }
 
 pub mod sequence_number {
