@@ -41,7 +41,6 @@ mod test {
         info!("ser: {:#x}", ser);
         let msg_out: TradeMessage = from_serializer_stack(&ser).unwrap();
         info!("msg_out:? {:?}", msg_out);
-        //assert_eq!(msg_out, msg_inp);
         assert_eq!(ser.len(), TRADE_BUST_MESSAGE as usize);
     }
 }
