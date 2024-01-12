@@ -1,7 +1,5 @@
-use crate::prelude::{Header,PacketTypeOrderCancelMessage};
+use crate::prelude::{Header, PacketTypeOrderCancelMessage};
 use byteserde_derive::{ByteDeserializeSlice, ByteSerializeStack, ByteSerializedLenOf};
-
-
 
 pub const ORDER_ADD_RESPONSE_MESSAGE: u16 = 33;
 #[derive(ByteSerializeStack, ByteDeserializeSlice, ByteSerializedLenOf, PartialEq, Debug, Clone)]

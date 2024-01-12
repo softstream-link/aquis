@@ -1,6 +1,5 @@
-use crate:: prelude::{Header,PacketTypeTradeCaptureMessage};
+use crate::prelude::{Header, PacketTypeTradeCaptureMessage};
 use byteserde_derive::{ByteDeserializeSlice, ByteSerializeStack, ByteSerializedLenOf};
-
 
 pub const TRADE_CAPTURE_MESSAGE: u16 = 34;
 #[derive(ByteSerializeStack, ByteDeserializeSlice, ByteSerializedLenOf, PartialEq, Debug, Clone)]

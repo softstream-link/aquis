@@ -1,4 +1,4 @@
-use crate::prelude::{Header,PacketTypeTradeMessage};
+use crate::prelude::{Header, PacketTypeTradeMessage};
 use byteserde_derive::{ByteDeserializeSlice, ByteSerializeStack, ByteSerializedLenOf};
 
 pub const TRADE_MESSAGE: u16 = 49;
@@ -51,7 +51,7 @@ mod test {
         info!("ser: {:#x}", ser);
         let msg_out: TradeMessage = from_serializer_stack(&ser).unwrap();
         info!("msg_out:? {:?}", msg_out);
-        
+
         assert_eq!(ser.len(), TRADE_MESSAGE as usize);
     }
 }

@@ -1,4 +1,4 @@
-use crate::prelude::{Header,PacketTypeIcebergOrderRefreshMessage};
+use crate::prelude::{Header, PacketTypeIcebergOrderRefreshMessage};
 use byteserde_derive::{ByteDeserializeSlice, ByteSerializeStack, ByteSerializedLenOf};
 
 pub const ICEBERG_ORDER_REFRESH_MESSAGE: u16 = 23;

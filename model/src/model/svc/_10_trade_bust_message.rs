@@ -1,11 +1,11 @@
-use crate::prelude::{Header,PacketTypeTradeBustMessage};
+use crate::prelude::{Header, PacketTypeTradeBustMessage};
 use byteserde_derive::{ByteDeserializeSlice, ByteSerializeStack, ByteSerializedLenOf};
 
 pub const TRADE_BUST_MESSAGE: u16 = 36;
 #[derive(ByteSerializeStack, ByteDeserializeSlice, ByteSerializedLenOf, PartialEq, Debug, Clone)]
 #[byteserde(endian = "le")]
 pub struct TradeMessage {
-    header:Header<PacketTypeTradeBustMessage,TRADE_BUST_MESSAGE>,
+    header: Header<PacketTypeTradeBustMessage, TRADE_BUST_MESSAGE>,
     order_ref: u32,
     quantity: u32,
     price: u64,

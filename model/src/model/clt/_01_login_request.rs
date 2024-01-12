@@ -6,7 +6,7 @@ pub const LOGIN_REQUEST_MSG_LEN: u16 = 47;
 #[byteserde(endian = "le")]
 pub struct LoginRequest {
     header: Header<PacketTypeLoginRequest, LOGIN_REQUEST_MSG_LEN>,
-    protocol_version: u16, 
+    protocol_version: u16,
     sender_id: SenderID,
     password: Password,
     inactivity_timeout_sec: u16,
@@ -16,7 +16,7 @@ impl Default for LoginRequest {
     fn default() -> Self {
         LoginRequest {
             header: Header::default(),
-            protocol_version: 2, 
+            protocol_version: 2,
             sender_id: b"TEST_SENDER_ID".as_slice().into(),
             password: b"TEST_SENDER_ID".as_slice().into(),
             inactivity_timeout_sec: 1,

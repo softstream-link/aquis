@@ -1,4 +1,4 @@
-use crate::prelude::{Header,PacketTypeOrderModifyMessage };
+use crate::prelude::{Header, PacketTypeOrderModifyMessage};
 use byteserde_derive::{ByteDeserializeSlice, ByteSerializeStack, ByteSerializedLenOf};
 
 pub const ORDER_MODIFY_RESPONSE_MESSAGE: u16 = 33;

@@ -1,11 +1,11 @@
-use crate::prelude::{Header,PacketTypeOrderCancelMessage};
+use crate::prelude::{Header, PacketTypeOrderCancelMessage};
 use byteserde_derive::{ByteDeserializeSlice, ByteSerializeStack, ByteSerializedLenOf};
 
 pub const ORDER_CANCEL_RESPONSE_MESSAGE: u16 = 28;
 #[derive(ByteSerializeStack, ByteDeserializeSlice, ByteSerializedLenOf, PartialEq, Debug, Clone)]
 #[byteserde(endian = "le")]
 pub struct OrderCancelResponseMessage {
-    header: Header<PacketTypeOrderCancelMessage,ORDER_CANCEL_RESPONSE_MESSAGE>,
+    header: Header<PacketTypeOrderCancelMessage, ORDER_CANCEL_RESPONSE_MESSAGE>,
     request_ref: u32,
     status: u8,
     time_stamp: u64,
